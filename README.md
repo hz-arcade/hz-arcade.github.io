@@ -27,7 +27,7 @@ serves every other repository in the organization that has Pages turned on at
 ## Files
 
 Plain files, no build step. `index.html` is complete without JavaScript; `catalog.js` only
-switches the language (English, 简体中文, 繁體中文) and passes an explicit choice on to the games
+switches the language (English, 简体中文, 繁體中文, Español) and passes an explicit choice on to the games
 as `?lang=`.
 
 The old addresses under `pages.hz.ax` forward here; those forwarding pages live in

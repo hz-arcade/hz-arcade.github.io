@@ -25,6 +25,7 @@
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="zh_CN" />
     <meta property="og:locale:alternate" content="zh_TW" />
+    <meta property="og:locale:alternate" content="es_ES" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="HZ Arcade" />
     <meta name="twitter:description" content="Free browser games for phone and desktop. No install, no ads." />
@@ -38,11 +39,20 @@
         <img src="/favicon.svg" alt="" width="40" height="40" />
         <span>HZ Arcade</span>
       </a>
-      <nav class="langs" aria-label="Language">
-        <button type="button" data-lang="en" lang="en">English</button>
-        <button type="button" data-lang="zh-CN" lang="zh-CN">简体中文</button>
-        <button type="button" data-lang="zh-TW" lang="zh-TW">繁體中文</button>
-      </nav>
+      <!-- Shown by catalog.js; without scripts the page stays in English. -->
+      <label class="lang" hidden>
+        <span class="sr-only" data-i18n="lang.label">Language</span>
+        <svg class="globe" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18" />
+        </svg>
+        <select id="lang">
+          <option value="en" lang="en">English</option>
+          <option value="zh-CN" lang="zh-CN">简体中文</option>
+          <option value="zh-TW" lang="zh-TW">繁體中文</option>
+          <option value="es" lang="es">Español</option>
+        </select>
+      </label>
     </header>
 
     <main>

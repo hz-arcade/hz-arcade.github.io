@@ -25,6 +25,7 @@
       'tag.relax': 'Relaxing',
       'foot.note': 'Games work offline once opened, and can be added to your home screen.',
       'foot.source': 'Source on GitHub',
+      'lang.label': 'Language',
     },
     'zh-CN': {
       'doc.title': 'HZ 小游戏厅',
@@ -45,6 +46,7 @@
       'tag.relax': '休闲',
       'foot.note': '游戏打开一次后可离线游玩，也可以添加到主屏幕。',
       'foot.source': 'GitHub 源代码',
+      'lang.label': '语言',
     },
     'zh-TW': {
       'doc.title': 'HZ 小遊戲廳',
@@ -65,10 +67,33 @@
       'tag.relax': '休閒',
       'foot.note': '遊戲打開一次後可離線遊玩，也可以加入主畫面。',
       'foot.source': 'GitHub 原始碼',
+      'lang.label': '語言',
+    },
+    es: {
+      'doc.title': 'HZ Arcade',
+      'hero.title': 'Elige un juego',
+      'hero.sub': 'Gratis en tu navegador, en el móvil o en el ordenador. Sin instalar nada y sin anuncios.',
+      play: 'Jugar',
+      'suika.title': 'Suika Jelly',
+      'suika.desc': 'Suelta frutas de gelatina en un tarro y une las que son iguales hasta conseguir una sandía.',
+      'gold.title': 'Gold Miner',
+      'gold.desc': 'Lanza el gancho, atrapa el oro y gana al reloj. Juega en solitario o con un amigo.',
+      'pelican.title': 'Pelican Pedal',
+      'pelican.desc': 'Un pelícano, una bicicleta y toda una costa hasta la puesta de sol. Un paseo tranquilo en 3D.',
+      'tag.puzzle': 'Puzle',
+      'tag.leaderboard': 'Clasificación mundial',
+      'tag.arcade': 'Arcade',
+      'tag.coop': 'Cooperativo para dos',
+      'tag.3d': '3D',
+      'tag.relax': 'Relajante',
+      'foot.note': 'Los juegos funcionan sin conexión después de abrirlos una vez y se pueden añadir a la pantalla de inicio.',
+      'foot.source': 'Código en GitHub',
+      'lang.label': 'Idioma',
     },
   };
 
   var STORAGE_KEY = 'arcade.lang';
+  var picker = document.getElementById('lang');
 
   /** Map any BCP-47 tag to a supported language, or null if unrelated. */
   function match(tag) {
@@ -78,6 +103,7 @@
     if (t === 'zh' || t.indexOf('zh-') === 0) {
       return /hant|-tw|-hk|-mo/.test(t) ? 'zh-TW' : 'zh-CN';
     }
+    if (t === 'es' || t.indexOf('es-') === 0) return 'es';
     return null;
   }
 
@@ -113,28 +139,25 @@
       var s = table[el.getAttribute('data-i18n')];
       if (s) el.textContent = s;
     });
-    document.querySelectorAll('.langs button').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang));
-    });
+    picker.value = lang;
     // The games read ?lang= too. Only pass it on when the visitor picked it; otherwise each
-    // game keeps its own remembered language.
+    // game keeps its own remembered language. A game without that language falls back by itself.
     document.querySelectorAll('a.card').forEach(function (a) {
       var base = '/' + a.getAttribute('data-game') + '/';
       a.setAttribute('href', explicit ? base + '?lang=' + encodeURIComponent(lang) : base);
     });
   }
 
-  document.querySelectorAll('.langs button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var lang = b.getAttribute('data-lang');
-      try {
-        localStorage.setItem(STORAGE_KEY, lang);
-      } catch (e) {
-        /* private mode: the choice lasts for this page only */
-      }
-      apply(lang, true);
-    });
+  picker.addEventListener('change', function () {
+    var lang = match(picker.value) || 'en';
+    try {
+      localStorage.setItem(STORAGE_KEY, lang);
+    } catch (e) {
+      /* private mode: the choice lasts for this page only */
+    }
+    apply(lang, true);
   });
 
+  picker.parentNode.hidden = false;
   apply(detect(), chosen() !== null);
 })();

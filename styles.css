@@ -64,31 +64,70 @@ a {
   border-radius: 10px;
 }
 
-.langs {
+.lang {
+  position: relative;
   display: inline-flex;
-  padding: 4px;
+  align-items: center;
   border-radius: 999px;
+  color: var(--ink);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--line);
 }
 
-.langs button {
-  appearance: none;
-  border: 0;
-  background: none;
+.lang[hidden] {
+  display: none;
+}
+
+.lang .globe {
+  position: absolute;
+  left: 14px;
+  pointer-events: none;
   color: var(--ink-soft);
-  font: inherit;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  min-height: 40px;
+}
+
+/* Arrow drawn in CSS, since the native one cannot be coloured. */
+.lang::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  border-right: 2px solid var(--ink-soft);
+  border-bottom: 2px solid var(--ink-soft);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.lang select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
   border-radius: 999px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  /* 16px keeps iOS from zooming in when the list opens. */
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 8px 38px 8px 40px;
   cursor: pointer;
 }
 
-.langs button[aria-pressed='true'] {
-  background: var(--ink);
-  color: var(--bg);
+/* The open list is drawn by the system; give it readable colours where the browser honours them. */
+.lang option {
+  color: #1d1836;
+  background: #fff7ea;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 main {
@@ -221,7 +260,7 @@ main {
 }
 
 .card:focus-visible,
-.langs button:focus-visible,
+.lang select:focus-visible,
 .brand:focus-visible,
 .foot a:focus-visible {
   outline: 3px solid var(--glow);
