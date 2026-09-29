@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1d1836" />
+    <meta name="color-scheme" content="dark" />
+    <title>HZ Arcade · 小游戏厅</title>
+    <meta name="description" content="Free browser games for phone and desktop: Suika Jelly, Gold Miner and Pelican Pedal. No install, no ads. English · 简体中文 · 繁體中文." />
+    <link rel="canonical" href="https://arcade.hz.ax/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HZ Arcade" />
+    <meta property="og:title" content="HZ Arcade" />
+    <meta property="og:description" content="Free browser games for phone and desktop. No install, no ads." />
+    <meta property="og:url" content="https://arcade.hz.ax/" />
+    <meta property="og:image" content="https://arcade.hz.ax/cover.png" />
+    <meta property="og:image:secure_url" content="https://arcade.hz.ax/cover.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="HZ Arcade: Suika Jelly, Gold Miner and Pelican Pedal" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="zh_CN" />
+    <meta property="og:locale:alternate" content="zh_TW" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HZ Arcade" />
+    <meta name="twitter:description" content="Free browser games for phone and desktop. No install, no ads." />
+    <meta name="twitter:image" content="https://arcade.hz.ax/cover.png" />
+
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/" aria-label="HZ Arcade">
+        <img src="/favicon.svg" alt="" width="40" height="40" />
+        <span>HZ Arcade</span>
+      </a>
+      <nav class="langs" aria-label="Language">
+        <button type="button" data-lang="en" lang="en">English</button>
+        <button type="button" data-lang="zh-CN" lang="zh-CN">简体中文</button>
+        <button type="button" data-lang="zh-TW" lang="zh-TW">繁體中文</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 data-i18n="hero.title">Pick a game</h1>
+        <p data-i18n="hero.sub">Free to play in your browser, on phone or desktop. No install, no ads.</p>
+      </section>
+
+      <!-- One card per game. Covers are served by the games themselves, so they never go stale. -->
+      <ul class="games">
+        <li>
+          <a class="card" href="/suika-jelly/" data-game="suika-jelly" style="--accent: #ff8fa3">
+            <img class="cover" src="/suika-jelly/cover.png" alt="" width="1200" height="630" loading="eager" />
+            <div class="body">
+              <h2 data-i18n="suika.title">Suika Jelly</h2>
+              <p data-i18n="suika.desc">Drop jelly fruits into a mason jar and merge matching pairs until you grow a watermelon.</p>
+              <ul class="tags">
+                <li data-i18n="tag.puzzle">Puzzle</li>
+                <li data-i18n="tag.leaderboard">Global leaderboard</li>
+              </ul>
+              <span class="play" data-i18n="play">Play</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="/gold-miner/" data-game="gold-miner" style="--accent: #f0b62a">
+            <img class="cover" src="/gold-miner/cover.png" alt="" width="1200" height="630" loading="eager" />
+            <div class="body">
+              <h2 data-i18n="gold.title">Gold Miner</h2>
+              <p data-i18n="gold.desc">Swing the hook, grab the gold and beat the clock. Play alone or with a friend.</p>
+              <ul class="tags">
+                <li data-i18n="tag.arcade">Arcade</li>
+                <li data-i18n="tag.coop">Two-player co-op</li>
+              </ul>
+              <span class="play" data-i18n="play">Play</span>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a class="card" href="/pelican-pedal/" data-game="pelican-pedal" style="--accent: #5fc6d8">
+            <img class="cover" src="/pelican-pedal/cover.png" alt="" width="1200" height="630" loading="eager" />
+            <div class="body">
+              <h2 data-i18n="pelican.title">Pelican Pedal</h2>
+              <p data-i18n="pelican.desc">A pelican, a bicycle and a whole coast to the sunset. A calm 3D ride.</p>
+              <ul class="tags">
+                <li data-i18n="tag.3d">3D</li>
+                <li data-i18n="tag.relax">Relaxing</li>
+              </ul>
+              <span class="play" data-i18n="play">Play</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="foot">
+      <p data-i18n="foot.note">Games work offline once opened, and can be added to your home screen.</p>
+      <p><a id="source" href="https://github.com/hz-arcade" rel="noopener" data-i18n="foot.source">Source on GitHub</a></p>
+    </footer>
+
+    <script src="/catalog.js"></script>
+  </body>
+</html>

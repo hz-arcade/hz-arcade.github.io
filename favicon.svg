@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2f73"/>
+      <stop offset="1" stop-color="#1d1836"/>
+    </linearGradient>
+    <radialGradient id="ball" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#ffc2cd"/>
+      <stop offset="0.55" stop-color="#ff6b88"/>
+      <stop offset="1" stop-color="#c2305a"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <!-- joystick -->
+  <rect x="29" y="24" width="6" height="20" rx="3" fill="#fff7ea"/>
+  <circle cx="32" cy="19" r="10" fill="url(#ball)"/>
+  <ellipse cx="28.5" cy="15.5" rx="3.2" ry="2.2" fill="#fff" opacity="0.7"/>
+  <rect x="12" y="41" width="40" height="12" rx="6" fill="#ffd166"/>
+  <rect x="12" y="47" width="40" height="6" rx="3" fill="#e0a92e"/>
+  <circle cx="45" cy="44.5" r="2.2" fill="#5fc6d8"/>
+</svg>
