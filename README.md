@@ -9,6 +9,7 @@ under the same domain:
 | Suika Jelly | https://arcade.hz.ax/suika-jelly/ | `suika-jelly` |
 | Gold Miner | https://arcade.hz.ax/gold-miner/ | `gold-miner` |
 | Pelican Pedal | https://arcade.hz.ax/pelican-pedal/ | `pelican-pedal` |
+| Flap Flock | https://arcade.hz.ax/flap-flock/ | `flap-flock` |
 
 ## How the addresses work
 
@@ -21,7 +22,7 @@ serves every other repository in the organization that has Pages turned on at
 1. Create the game's repository in this organization and turn on Pages for it. It must be built
    for the base path `/<repository name>/`.
 2. Give it a `cover.png` (1200x630) at its root.
-3. Add a card to `index.html` and its texts to the three tables in `catalog.js`.
+3. Add a card to `index.html` and its texts to the four tables in `catalog.js`.
 4. Run `node scripts/assets.mjs` to refresh the link preview image, then push.
 
 ## Files
