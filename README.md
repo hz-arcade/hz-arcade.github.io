@@ -10,6 +10,7 @@ under the same domain:
 | Gold Miner | https://arcade.hz.ax/gold-miner/ | `gold-miner` |
 | Pelican Pedal | https://arcade.hz.ax/pelican-pedal/ | `pelican-pedal` |
 | Flap Flock | https://arcade.hz.ax/flap-flock/ | `flap-flock` |
+| Quack-doku | https://arcade.hz.ax/quack-doku/ | `quack-doku` |
 
 ## How the addresses work
 

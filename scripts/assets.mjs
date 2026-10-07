@@ -22,6 +22,7 @@ const GAMES = [
   ['gold-miner', 'Gold Miner'],
   ['pelican-pedal', 'Pelican Pedal'],
   ['flap-flock', 'Flap Flock'],
+  ['quack-doku', 'Quack-doku'],
 ];
 // The thumbnails share the 1072 px between the 64 px side margins.
 const GAP = 24;
